@@ -1,6 +1,6 @@
 "use strict";
 //import uut from './solution-compiled';
-const uut = require('./solution');
+const uut = require('./../../../metaBright/great7/solution');
 const expect = require('chai').expect;
 
 describe('solution for great7', () => {

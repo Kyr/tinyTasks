@@ -4,7 +4,9 @@
   "description": "Tiny tasks for different reason, sometimes just exercise, sometime else.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run lint && npm run unit-test",
+    "lint": "eslint ./",
+    "unit-test": "istanbul cover --dir reports/coverage ./node_modules/.bin/_mocha -- ./test/"
   },
   "author": "Kyrylo Fedorov",
   "license": "ISC",
