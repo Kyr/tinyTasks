@@ -1,0 +1,30 @@
+{
+  "name": "tiny_tasks",
+  "version": "0.0.0",
+  "description": "Tiny tasks for different reason, sometimes just exercise, sometime else.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kyrylo Fedorov",
+  "license": "ISC",
+
+  "eslintConfig":{
+    "doc": "http://eslint.org/docs/user-guide/configuring",
+    "env": {
+      "node": true
+    },
+    "globals":{},
+    "ecmaFeatures": {
+      "arrowFunctions": true,
+      "blockBindings": true,
+      "templateStrings": true
+    }
+  },
+
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^1.10.3",
+    "mocha": "^2.4.5"
+  }
+}
