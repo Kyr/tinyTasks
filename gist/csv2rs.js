@@ -1,5 +1,11 @@
 "use strict";
-module.exports = function(csv) {
+module.exports = csv2recordSet;
+/**
+ *
+ * @param {String} csv Expected that it should be multi line string with comma separated fields and \n separated record
+ * @return [Object] Array of records where fields named as described in first line of `csv` argument
+ */
+function csv2recordSet(csv) {
 	var headers = {};
 	var recordSet = [];
 
@@ -18,4 +24,4 @@ module.exports = function(csv) {
 	});
 
 	return recordSet;
-};
+}

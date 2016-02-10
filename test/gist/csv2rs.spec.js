@@ -18,19 +18,17 @@ const UUT = require('../../gist/csv2rs');
 const expect = require('chai').expect;
 
 describe('test simple csv2recordSet converter', () => {
-	const expectedFields = {id: 1, title: 'Tasks #1'};
-	var testRecordSet = [];
-	before(() => testRecordSet = UUT(taskTable));
+	const expectedFields = ['id', 'title'];
+	var testRecordSet = UUT(taskTable);
 
 	it(`should contains 10 elements`, () => expect(testRecordSet.length).to.be.equal(10));
 
 	it('should contains record as object', () => expect(testRecordSet[0]).to.be.an('object'));
 
-	it('should contains valid fields', () => expect(testRecordSet[0]).to.have.all.keys(expectedFields));
-
-	//describe('move it deeper', () =>
-	//	testRecordSet.forEach(testRecord =>
-	//	)
-	//);
+	describe('every record in testRecordSet', () =>
+		testRecordSet.forEach((testRecord, index) =>
+			it(`should contains valid fields in record #${index+1}`, () => expect(testRecord).to.have.all.keys(expectedFields))
+		)
+	);
 
 });
